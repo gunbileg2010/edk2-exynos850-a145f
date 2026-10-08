@@ -21,6 +21,10 @@
   # regions the stock bootloader / TrustZone reserve (see the library source).
   PlatformMemoryMapLib|Silicon/Samsung/Exynos850Pkg/Library/PlatformMemoryMapLibA145f/PlatformMemoryMapLibA145f.inf
 
+  # Exception handler that validates pointers and prints ESR/FAR/registers first
+  # (the stock one faults while unwinding a corrupt frame chain and hides the cause).
+  DefaultExceptionHandlerLib|Silicon/Samsung/Exynos850Pkg/Library/DefaultExceptionHandlerLibSafe/DefaultExceptionHandlerLibSafe.inf
+
 [PcdsFixedAtBuild.common]
   # DXE heap must end before ramoops (0x8fe00000)
   gSamsungTokenSpaceGuid.PcdUefiMemPoolBase|0x80C50000
