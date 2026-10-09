@@ -13,8 +13,9 @@
  *   0xbba00000-0xbfffffff               TrustZone protected (not in DTB RAM)
  *   0xbff80000 +512K el3mon            0xc3000000 +512K seclog_mem
  *   0xd0000000 +136M cp_rmem (modem)   0xdb900000 +4M    camera_uncached
+ *   0xdc000000 +64M  reserved (seen in /proc/iomem on SM-A145F A15 firmware)
  *
- * The rest of the 4 GB (above 0xdbd00000 and the 2 GB at 0x880000000) is
+ * The rest of the 4 GB (above 0xdc000000 and the 2 GB at 0x880000000) is
  * peppered with reserved nodes; extend this table once it is needed.
  */
 static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
@@ -32,14 +33,17 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     /* ends at 0x8fe00000 (ramoops) */
     {"HLOS 0 Split",      0x80C50000, 0x0F1B0000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
     /* 0x8fe00000-0x91400000 reserved: ramoops, kaslr, ect_binary, sec_debug_next */
-    {"HLOS 0 Split 2",    0x91400000, 0x0FC00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
+    {"HLOS 0 Split 2",    0x91400000, 0x0EC00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
+    /* uniLoader image incl. the DTB it passes in x0 (0xa070e000): UEFI only stores the pointer and reads
+       the tree later, so this must never be handed out as free memory */
+    {"uniLoader + DTB",   0xA0000000, 0x01000000, AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
     {"UEFI FD",           0xA1000000, 0x00700000, AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
     /* up to 0xbb9fffff, the end of the first RAM bank in the live DTB */
     {"HLOS 0 Split 3",    0xA1700000, 0x1A300000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     {"HLOS 1",            0xC0000000, 0x03000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     {"HLOS 1 Split",      0xC3080000, 0x0CF80000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     {"HLOS 2",            0xD8800000, 0x03100000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
-    {"HLOS 2 Split",      0xDBD00000, 0x04300000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
+    {"HLOS 2 Split",      0xDBD00000, 0x00300000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK},
     /* bootloader framebuffer 13 MiB; 20 MiB mapped because PlatformInitialize clears 0x1400000 bytes */
     {"Display Reserved",  0xFA000000, 0x01400000, AddMem, MEM_RES, SYS_MEM_CAP, Reserv, WRITE_THROUGH_XN},
 
