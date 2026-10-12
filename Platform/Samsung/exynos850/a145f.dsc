@@ -8,7 +8,7 @@
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
   FLASH_DEFINITION               = Platform/Samsung/exynos850/exynos850.fdf
-  DEVICE_DXE_FV_COMPONENTS       = Platform/Samsung/exynos850/exynos850.fdf.inc
+  DEVICE_DXE_FV_COMPONENTS       = Platform/Samsung/exynos850/a145f.fdf.inc
   BROKEN_CNTFRQ_EL0              = 1
 
 !include Platform/Samsung/exynos850/exynos850.dsc
@@ -42,3 +42,8 @@
   gRenegadePkgTokenSpaceGuid.PcdDeviceVendor|"Samsung"
   gRenegadePkgTokenSpaceGuid.PcdDeviceProduct|"Galaxy A14 4G"
   gRenegadePkgTokenSpaceGuid.PcdDeviceCodeName|"a145f"
+
+[Components.common]
+  Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe.inf
+  MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf
+  MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf

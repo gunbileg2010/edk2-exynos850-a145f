@@ -650,7 +650,7 @@ testValidUtf8File (CheckUnicodeSourceFiles.Tests.testValidUtf8File) ... ok
 testValidUtf8FileWithBom (CheckUnicodeSourceFiles.Tests.testValidUtf8FileWithBom) ... ok
 
 ----------------------------------------------------------------------
-Ran 302 tests in 0.796s
+Ran 302 tests in 0.674s
 
 OK
 make[1]: Leaving directory '/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/Tests'
@@ -729,9 +729,9 @@ aarch64-linux-gnu-objcopy -O binary BootShim.Dualboot.elf BootShim.Dualboot.bin
 + return 0
 + mkdir -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf
 + cp /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/build_rule.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/tools_def.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf/
-+ build -s -n 0 -a AARCH64 -t GCC5 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=08aa025 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
++ build -s -n 0 -a AARCH64 -t CLANG38 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=98f3ad1 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
 Build environment: Linux-7.0.0-38-generic-x86_64-with-glibc2.43
-Build start time: 15:56:50, Oct.09 2026
+Build start time: 14:54:33, Oct.12 2026
 
 WORKSPACE        = /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace
 PACKAGES_PATH    = /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2:/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2-platforms:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit:/home/gunbileg/Downloads/edk2-exynos850-a145f:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers
@@ -749,10 +749,10 @@ Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 
-Processing meta-data 
-.Architecture(s)  = AARCH64
+Processing meta-data .
+Architecture(s)  = AARCH64
 Build target     = RELEASE
-Toolchain        = GCC5
+Toolchain        = CLANG38
 
 Active Platform          = /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc
 Parser...
@@ -798,7 +798,7 @@ Parser...
 Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
-.Parser...
+Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 Parser...
@@ -862,46 +862,7 @@ Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 .. done!
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/lib/SimpleInitLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/FdtLib/FdtLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/compatible/SimpleInitCompatible.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseStackCheckLib/BaseStackCheckLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeHobLib/DxeHobLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiLib/UefiLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePrintLib/BasePrintLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmCacheMaintenanceLib/ArmCacheMaintenanceLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/RegisterFilterLibNull/RegisterFilterLibNull.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmLib/ArmBaseLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseLib/BaseLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxePcdLib/DxePcdLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/regex/RegexLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/loggerd/SimpleInitLoggerd.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/linux-boot/SimpleInitBootLinux.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeSecurityManagementLib/DxeSecurityManagementLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/confd/SimpleInitConfd.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/boot/SimpleInitBoot.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/assets/SimpleInitAssets.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/stb/STBLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/json-c/JSONC.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/KeypadDeviceImplLib/KeypadDeviceImplLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/PlatformPeiLib/PlatformPeiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/PrePiExtractGuidedSectionLib/PrePiExtractGuidedSectionLib.inf [AARCH64]
@@ -912,6 +873,32 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exyno
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPlatformPkg/Library/PrePiHobListPointerLib/PrePiHobListPointerLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/PrePiLib/PrePiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/lodepng/LodePNG.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/regex/RegexLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/boot/SimpleInitBoot.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libufdt/UfdtLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/confd/SimpleInitConfd.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/loggerd/SimpleInitLoggerd.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/assets/SimpleInitAssets.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseCpuLib/BaseCpuLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmMmuLib/ArmMmuBaseLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/lua/SimpleInitLua.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/zlib/Zlib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/NonDiscoverableDeviceRegistrationLib/NonDiscoverableDeviceRegistrationLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/lua/LuaLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/stb/STBLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/mxml/MiniXML.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libzip/ZipLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/FrameBufferBltLib/FrameBufferBltLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/compress/SimpleInitCompress.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BootLogoLib/BootLogoLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/MemoryMapHelperLib/MemoryMapHelperLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/nanosvg/NanoSVG.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Library/UefiShellAcpiViewCommandLib/UefiShellAcpiViewCommandLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Library/UefiShellNetwork1CommandsLib/UefiShellNetwork1CommandsLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Library/UefiShellInstall1CommandsLib/UefiShellInstall1CommandsLib.inf [AARCH64]
@@ -927,77 +914,35 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Library/UefiShellLib/UefiShellLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseOrderedCollectionRedBlackTreeLib/BaseOrderedCollectionRedBlackTreeLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PrintDxe/PrintDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/CustomizedDisplayLib/CustomizedDisplayLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/SetCPUFreqDxe/SetCPUFreqDxe.inf [AARCH64]
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe/DEBUG/LogoDxe.dll has a LOAD segment with RWX permissions
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libufdt/UfdtLib.inf [AARCH64]
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe/DEBUG/LogoDxe.dll
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BaseBmpSupportLib/BaseBmpSupportLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf [AARCH64]
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe/DEBUG/LogoDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe/DEBUG/LogoDxe.dll
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseCpuLib/BaseCpuLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmMmuLib/ArmMmuBaseLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/filesystem/SimpleInitFileSystem.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/lua/SimpleInitLua.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/zlib/Zlib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/locate/SimpleInitLocate.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmGicArchLib/ArmGicArchLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/gui/SimpleInitGUI.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/lua/LuaLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/SOCSmbiosInfoLib/SOCSmbiosInfoLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/TimeBaseLib/TimeBaseLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libzip/ZipLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/mxml/MiniXML.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/FrameBufferBltLib/FrameBufferBltLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/compress/SimpleInitCompress.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BootLogoLib/BootLogoLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeCapsuleLibNull/DxeCapsuleLibNull.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/MsPlatformDevicesLib/MsPlatformDevicesLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/MemoryMapHelperLib/MemoryMapHelperLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiScsiLib/UefiScsiLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/nanosvg/NanoSVG.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/hivex/HivexLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/FreeType.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/KernelErrataPatcher/KernelErrataPatcher.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/LzmaCustomDecompressLib/LzmaCustomDecompressLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeCrc32GuidedSectionExtractLib/DxeCrc32GuidedSectionExtractLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmExceptionLib/ArmExceptionLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DebugAgentLibNull/DebugAgentLibNull.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePeCoffLib/BasePeCoffLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeCorePerformanceLib/DxeCorePerformanceLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseUefiDecompressLib/BaseUefiDecompressLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeExtractGuidedSectionLib/DxeExtractGuidedSectionLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/DefaultExceptionHandlerLibSafe/DefaultExceptionHandlerLibSafe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePeCoffExtraActionLibNull/BasePeCoffExtraActionLibNull.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/PlatformMemoryMapLibA145f/PlatformMemoryMapLibA145f.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeCoreMemoryAllocationLib/DxeCoreMemoryAllocationLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeCoreHobLib/DxeCoreHobLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeCoreEntryPoint/DxeCoreEntryPoint.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/lodepng/LodePNG.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/DxeDtPlatformDtbLoaderLibDefault/DxeDtPlatformDtbLoaderLibDefault.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BaseBmpSupportLib/BaseBmpSupportLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/filesystem/SimpleInitFileSystem.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/locate/SimpleInitLocate.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiUsbLib/UefiUsbLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/FatPkg/EnhancedFatDxe/Fat.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmGicArchLib/ArmGicArchLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/gui/SimpleInitGUI.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BootManagerUiLib/BootManagerUiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/FileExplorerLib/FileExplorerLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiBootManagerLib/UefiBootManagerLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxePerformanceLib/DxePerformanceLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePeCoffGetEntryPointLib/BasePeCoffGetEntryPointLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeServicesLib/DxeServicesLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiSortLib/UefiSortLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/VariablePolicyHelperLib/VariablePolicyHelperLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/VariablePolicyLib/VariablePolicyLibRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/BaseVariableFlashInfoLib/BaseVariableFlashInfoLib.inf [AARCH64]
@@ -1007,119 +952,138 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeServicesTableLib/DxeServicesTableLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/SOCSmbiosInfoLib/SOCSmbiosInfoLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/LittleVgl.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiScsiLib/UefiScsiLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/linux-boot/SimpleInitBootLinux.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePeCoffLib/BasePeCoffLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePeCoffExtraActionLibNull/BasePeCoffExtraActionLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/lib/SimpleInitLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/FdtLib/FdtLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/compatible/SimpleInitCompatible.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeSecurityManagementLib/DxeSecurityManagementLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/TimeBaseLib/TimeBaseLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/ArmArchTimerLib/ArmArchTimerLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/DxeDtPlatformDtbLoaderLibDefault/DxeDtPlatformDtbLoaderLibDefault.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeServicesLib/DxeServicesLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/SimpleInitRootFS.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/LittleVgl.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libtsm/TSMLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/json-c/JSONC.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiRuntimeLib/UefiRuntimeLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/kernelfdt/KernelFdtDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PCD/Dxe/Pcd.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libtsm/TSMLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseStackCheckLib/BaseStackCheckLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeHobLib/DxeHobLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiLib/UefiLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugLibSerialPort/BaseDebugLibSerialPort.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePrintLib/BasePrintLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseIoLibIntrinsic/BaseIoLibIntrinsic.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmCacheMaintenanceLib/ArmCacheMaintenanceLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/RegisterFilterLibNull/RegisterFilterLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmLib/ArmBaseLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxePcdLib/DxePcdLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseLib/BaseLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/PrePi/PrePi.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Application/Shell/Shell.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/FatPkg/EnhancedFatDxe/Fat.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/main/SimpleInitMain.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/SetCPUFreqDxe/SetCPUFreqDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/TimerDxe/TimerDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/CpuDxe/CpuDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Scsi/ScsiDiskDxe/ScsiDiskDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/BdsDxe/BdsDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Scsi/ScsiBusDxe/ScsiBusDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Application/Shell/Shell.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PrintDxe/PrintDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMouseAbsolutePointerDxe/UsbMouseAbsolutePointerDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Core/Dxe/DxeMain.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/KernelErrataPatcher/KernelErrataPatcher.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Scsi/ScsiDiskDxe/ScsiDiskDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Application/UiApp/UiApp.inf [AARCH64]
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Scsi/ScsiBusDxe/ScsiBusDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Pci/PciBusDxe/PciBusDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/kernelfdt/KernelFdtDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Application/Reboot2PayloadApp/Reboot2PayloadApp.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Core/Dxe/DxeMain.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PCD/Dxe/Pcd.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/DtPlatformDxe/DtPlatformDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Application/UiApp/UiApp.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf [AARCH64]
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe/DEBUG/GenericKeypadDeviceDxe.dll has a LOAD segment with RWX permissions
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf [AARCH64]
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe/DEBUG/GenericKeypadDeviceDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe/DEBUG/GenericKeypadDeviceDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe/DEBUG/GenericKeypadDeviceDxe.dll
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/main/SimpleInitMain.inf [AARCH64]
-lto-wrapper: warning: using serial compilation of 2 LTRANS jobs
-lto-wrapper: note: see the ‘-flto’ option documentation for more information
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe/DEBUG/KeypadDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe/DEBUG/KeypadDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe/DEBUG/KeypadDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe/DEBUG/KeypadDxe.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/DEBUG/ArmCpuDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/DEBUG/ArmCpuDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/DEBUG/ArmCpuDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/ArmPkg/Drivers/CpuDxe/CpuDxe/DEBUG/ArmCpuDxe.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
-lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
-lto-wrapper: note: see the ‘-flto’ option documentation for more information
-lto-wrapper: warning: using serial compilation of 42 LTRANS jobs
-lto-wrapper: note: see the ‘-flto’ option documentation for more information
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
-lto-wrapper: warning: using serial compilation of 4 LTRANS jobs
-lto-wrapper: note: see the ‘-flto’ option documentation for more information
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:31: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gLineControlDirective = re.compile('^\s*#(?:line)?\s+([0-9]+)\s+"*([^"]*)"')
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:33: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gTypedefPattern = re.compile("^\s*typedef\s+struct(\s+\w+)?\s*[{]*$", re.MULTILINE)
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:35: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gPragmaPattern = re.compile("^\s*#pragma\s+pack", re.MULTILINE)
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:37: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gTypedef_SinglePattern = re.compile("^\s*typedef", re.MULTILINE)
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:39: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gTypedef_MulPattern = re.compile("^\s*(typedef)?\s+(struct|union)(\s+\w+)?\s*[{]*$", re.MULTILINE)
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:54: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
-  gAslIncludePattern = re.compile("^(\s*)[iI]nclude\s*\(\"?([^\"\(\)]+)\"\)", re.MULTILINE)
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Core/Dxe/DxeMain/DEBUG/DxeCore.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Core/Dxe/DxeMain/DEBUG/DxeCore.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Core/Dxe/DxeMain/DEBUG/DxeCore.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/MdeModulePkg/Core/Dxe/DxeMain/DEBUG/DxeCore.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf [AARCH64]
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf [AARCH64]
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
 
-Fd File Name:EXYNOS850_UEFI (/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/FV/EXYNOS850_UEFI.fd)
+Fd File Name:EXYNOS850_UEFI (/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/EXYNOS850_UEFI.fd)
 
 Generate Region at Offset 0x0
    Region Size = 0x700000
@@ -1128,16 +1092,16 @@ Generate Region at Offset 0x0
 Generating FVMAIN_COMPACT FV
 
 Generating FVMAIN FV
-############
-GUID cross reference file can be found at /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/FV/Guid.xref
+#########
+GUID cross reference file can be found at /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/Guid.xref
 
 FV Space Information
-FVMAIN [99%Full] 28518400 (0x1b32800) total, 28518352 (0x1b327d0) used, 48 (0x30) free
-FVMAIN_COMPACT [78%Full] 7340032 (0x700000) total, 5759296 (0x57e140) used, 1580736 (0x181ec0) free
+FVMAIN [99%Full] 28670400 (0x1b579c0) total, 28670352 (0x1b57990) used, 48 (0x30) free
+FVMAIN_COMPACT [78%Full] 7340032 (0x700000) total, 5787312 (0x584eb0) used, 1552720 (0x17b150) free
 
 - Done -
-Build end time: 15:57:26, Oct.09 2026
-Build total time: 00:00:37
+Build end time: 14:54:59, Oct.12 2026
+Build total time: 00:00:26
 
 + _call_hook platform_build_kernel
 + local NAME=platform_build_kernel
@@ -1145,8 +1109,8 @@ Build total time: 00:00:37
 + declare -F platform_build_kernel
 + eval platform_build_kernel
 ++ platform_build_kernel
-++ cat /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/BootShim/BootShim.bin /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/FV/EXYNOS850_UEFI.fd
-++ cp /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_GCC5/FV/EXYNOS850_UEFI.fd-bootshim /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/uefi-a145f-kernel
+++ cat /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/BootShim/BootShim.bin /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/EXYNOS850_UEFI.fd
+++ cp /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/EXYNOS850_UEFI.fd-bootshim /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/uefi-a145f-kernel
 + return 0
 + _call_hook platform_build_bootimg
 + local NAME=platform_build_bootimg
@@ -1154,12 +1118,58 @@ Build total time: 00:00:37
 + declare -F platform_build_bootimg
 + eval platform_build_bootimg
 ++ platform_build_bootimg
-++ local UNI=/home/gunbileg/Downloads/uniLoader-a145f-bootloader
+++ local UNI=/home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader
 ++ local OUT=/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f
-++ '[' -d /home/gunbileg/Downloads/uniLoader-a145f-bootloader ']'
-++ '[' -f '' ']'
-++ echo 'Set STOCK_BOOT_IMG to your stock boot.img'
-Set STOCK_BOOT_IMG to your stock boot.img
-++ return 1
-+ return 1
-+ return 1
+++ '[' -d /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader ']'
+++ '[' -f /run/media/gunbileg/LEAFHDD/uniLoader/a145f-backup/partitions/boot.img ']'
+++ '[' -f /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader/blob/dtb ']'
+++ cp /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/uefi-a145f-kernel /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader/blob/Image
+++ '[' -f /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader/blob/ramdisk ']'
+++ make -C /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader a145f_defconfig CROSS_COMPILE=aarch64-linux-gnu-
+#
+# configuration written to .config
+#
++++ nproc
+++ make -C /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader -j16 CROSS_COMPILE=aarch64-linux-gnu-
+scripts/kconfig/conf --silentoldconfig Kconfig
+  LDS     arch/aarch64/linker.lds
+  CC      board/samsung/board-a145f.o
+  CC      drivers/framework.o
+  CC      main/boot.o
+  CC      arch/aarch64/load-kernel.o
+  CC      main/main.o
+  CC      lib/compiler-rt.o
+  CC      drivers/ramdisk-handler.o
+  CC      lib/console/console.o
+  CC      main/boot-fdt.o
+  CC      lib/libfdt/fdt.o
+  CC      lib/libfdt/fdt_ro.o
+  CC      lib/libfdt/fdt_rw.o
+  CC      lib/libfdt/fdt_strerror.o
+  CC      lib/libfdt/fdt_sw.o
+  CC      lib/libfdt/fdt_wip.o
+  CC      lib/simplefb/simplefb.o
+  CC      lib/unic/string.o
+  LD      main/built-in.o
+  LD      arch/built-in.o
+  AR      drivers/lib.a
+  AR      board/lib.a
+  AR      lib/lib.a
+  LD      uniLoader.o
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: uniLoader.o has a LOAD segment with RWX permissions
+  OBJCOPY uniLoader
+  GZIP    uniLoader.gz
+++ python3 /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/a145f/pack_boot_v4.py /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader/uniLoader --stock /run/media/gunbileg/LEAFHDD/uniLoader/a145f-backup/partitions/boot.img -o /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.img
+wrote /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.img: 7688192 bytes (11% of the 64 MiB boot partition)
+++ mkdir -p /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/odin
+++ cp /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.img /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/odin/boot.img
+++ cd /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/odin
+++ tar -H ustar -cf /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.tar boot.img
+++ cp /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.img /home/gunbileg/Downloads/edk2-exynos850-a145f/boot-a145f.img
+++ echo 'Odin AP file: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.tar'
+Odin AP file: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/boot-a145f.tar
++ return 0
++ echo 'Build done: /home/gunbileg/Downloads/edk2-exynos850-a145f/boot-a145f.img'
+Build done: /home/gunbileg/Downloads/edk2-exynos850-a145f/boot-a145f.img
++ false
++ set +x

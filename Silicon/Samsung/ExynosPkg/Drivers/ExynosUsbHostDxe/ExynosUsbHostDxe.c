@@ -23,6 +23,7 @@
 #include <Library/UefiLib.h>
 #include <Guid/EventGroup.h>
 #include <Library/UefiBootServicesTableLib.h>
+#include <Library/NonDiscoverableDeviceRegistrationLib.h>
 
 #ifndef EXYNOS_USB_VBUS
 #define EXYNOS_USB_VBUS 1
@@ -37,6 +38,7 @@
 #define USBCTRL_BASE      0x13600000UL           /* usb@13600000 (xHCI/DWC3) */
 #define I2C_BASE          0x13830000UL           /* i2c@13830000 holds s2mu106@3d */
 #define S2MU106_ADDR      0x3D
+#define GPP0_BASE        0x139B0020UL
 
 /* ---- USB PHY control registers (phy-exynos-usb3p1-reg.h) ---------------- */
 #define PHY_CTRL_VER      0x00
@@ -220,6 +222,23 @@ Out:
   return Ok;
 }
 
+/* The controller is never set up by this driver otherwise: program the
+ * prescaler (PCLK/512/8) and enable, and log what the boot loader left behind. */
+STATIC VOID I2cInit (VOID)
+{
+  Say ("GPP0 before: CON=0x%08x DAT=0x%08x PUD=0x%08x DRV=0x%08x",
+       Rd (GPP0_BASE, 0x00), Rd (GPP0_BASE, 0x04), Rd (GPP0_BASE, 0x08), Rd (GPP0_BASE, 0x0C));
+  Upd (GPP0_BASE, 0x00, 0x22, 0xFF);
+  Upd (GPP0_BASE, 0x08, 0, 0xF);
+  Upd (GPP0_BASE, 0x0C, 0, 0xF);
+  Say ("GPP0 after:  CON=0x%08x PUD=0x%08x", Rd (GPP0_BASE, 0x00), Rd (GPP0_BASE, 0x08));
+  Say ("I2C at entry: CON=0x%08x STAT=0x%08x LC=0x%08x",
+       Rd (I2C_BASE, IICCON), Rd (I2C_BASE, IICSTAT), Rd (I2C_BASE, 0x10));
+  Wr (I2C_BASE, IICSTAT, IICSTAT_TXRXEN);
+  Wr (I2C_BASE, IICCON, IICCON_ACKEN | IICCON_IRQEN | BIT6 | 0x7);
+  MicroSecondDelay (100);
+}
+
 STATIC BOOLEAN ChgRead (UINT8 Reg, UINT8 *V)
 {
   return I2cWrite (S2MU106_ADDR, &Reg, 1, TRUE) && I2cReadByte (S2MU106_ADDR, V);
@@ -250,7 +269,10 @@ STATIC BOOLEAN VbusOn (VOID)
 {
   UINT8 Mode, Chk;
 
+  I2cInit ();
   if (!ChgRead (S2MU106_CHG_CTRL0, &Mode)) {
+    Say ("I2C after fail: CON=0x%08x STAT=0x%08x DS=0x%08x",
+         Rd (I2C_BASE, IICCON), Rd (I2C_BASE, IICSTAT), Rd (I2C_BASE, IICDS));
     Say ("S2MU106 not answering on I2C 0x%x (bus 0x%lx): clock/pinmux gated?", S2MU106_ADDR, I2C_BASE);
     return FALSE;
   }
@@ -426,6 +448,17 @@ EFI_STATUS EFIAPI ExynosUsbHostEntry (IN EFI_HANDLE Image, IN EFI_SYSTEM_TABLE *
   MicroSecondDelay (300000);
   XhciDump ();    /* a plugged device shows CCS (bit 0) in PORTSC after VBUS is up */
 #endif
+
+  {
+    EFI_HANDLE  H = NULL;
+    EFI_STATUS  R;
+
+    R = RegisterNonDiscoverableMmioDevice (
+          NonDiscoverableDeviceTypeXhci,
+          NonDiscoverableDeviceDmaTypeNonCoherent,
+          NULL, &H, 1, (UINTN)USBCTRL_BASE, (UINTN)0x10000);
+    Say ("register xHCI with EDK2 USB stack: %r", R);
+  }
 
   Say ("stage 1 done (log is %u bytes)", (UINT32)mLogLen);
   gBS->CreateEventEx (EVT_NOTIFY_SIGNAL, TPL_CALLBACK, ShowLog, NULL,
