@@ -45,5 +45,7 @@
 
 [Components.common]
   Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe.inf
+  # standalone tool: built to Build/.../RegDump.efi, not packed into the FV
+  Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump.inf
   MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf
   MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf

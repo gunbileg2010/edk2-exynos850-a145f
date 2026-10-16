@@ -507,6 +507,7 @@
 
   # Keypad
   Silicon/Samsung/ExynosPkg/Drivers/KeypadDxe/KeypadDxe.inf
+  Silicon/Samsung/Exynos850Pkg/Drivers/MmcDiagDxe/MmcDiagDxe.inf
   Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe.inf
 
   # ACPI

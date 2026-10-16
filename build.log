@@ -650,7 +650,7 @@ testValidUtf8File (CheckUnicodeSourceFiles.Tests.testValidUtf8File) ... ok
 testValidUtf8FileWithBom (CheckUnicodeSourceFiles.Tests.testValidUtf8FileWithBom) ... ok
 
 ----------------------------------------------------------------------
-Ran 302 tests in 0.674s
+Ran 302 tests in 0.655s
 
 OK
 make[1]: Leaving directory '/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/Tests'
@@ -729,9 +729,9 @@ aarch64-linux-gnu-objcopy -O binary BootShim.Dualboot.elf BootShim.Dualboot.bin
 + return 0
 + mkdir -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf
 + cp /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/build_rule.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/tools_def.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf/
-+ build -s -n 0 -a AARCH64 -t CLANG38 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=98f3ad1 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
++ build -s -n 0 -a AARCH64 -t CLANG38 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=c73bcc6 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
 Build environment: Linux-7.0.0-38-generic-x86_64-with-glibc2.43
-Build start time: 14:54:33, Oct.12 2026
+Build start time: 16:00:48, Oct.12 2026
 
 WORKSPACE        = /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace
 PACKAGES_PATH    = /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2:/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2-platforms:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit:/home/gunbileg/Downloads/edk2-exynos850-a145f:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers
@@ -745,11 +745,11 @@ Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 
+Processing meta-data .
 Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 
-Processing meta-data .
 Architecture(s)  = AARCH64
 Build target     = RELEASE
 Toolchain        = CLANG38
@@ -1040,10 +1040,6 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Acpi/AcpiTableDxe/AcpiTableDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Application/UiApp/UiApp.inf [AARCH64]
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/Drivers/ExynosUsbHostDxe/ExynosUsbHostDxe/DEBUG/ExynosUsbHostDxe.dll
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf [AARCH64]
@@ -1065,19 +1061,7 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf [AARCH64]
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf [AARCH64]
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe/DEBUG/UsbKbDxe.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe/DEBUG/NonDiscoverablePciDeviceDxe.dll
-/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll has a LOAD segment with RWX permissions
-objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
---strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
-/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe/DEBUG/XhciDxe.dll
 /usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll has a LOAD segment with RWX permissions
 objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
 --strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
@@ -1096,11 +1080,11 @@ Generating FVMAIN FV
 GUID cross reference file can be found at /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/Guid.xref
 
 FV Space Information
-FVMAIN [99%Full] 28670400 (0x1b579c0) total, 28670352 (0x1b57990) used, 48 (0x30) free
-FVMAIN_COMPACT [78%Full] 7340032 (0x700000) total, 5787312 (0x584eb0) used, 1552720 (0x17b150) free
+FVMAIN [99%Full] 28674496 (0x1b589c0) total, 28674448 (0x1b58990) used, 48 (0x30) free
+FVMAIN_COMPACT [78%Full] 7340032 (0x700000) total, 5787952 (0x585130) used, 1552080 (0x17aed0) free
 
 - Done -
-Build end time: 14:54:59, Oct.12 2026
+Build end time: 16:01:14, Oct.12 2026
 Build total time: 00:00:26
 
 + _call_hook platform_build_kernel
@@ -1133,15 +1117,15 @@ Build total time: 00:00:26
 ++ make -C /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader -j16 CROSS_COMPILE=aarch64-linux-gnu-
 scripts/kconfig/conf --silentoldconfig Kconfig
   LDS     arch/aarch64/linker.lds
-  CC      board/samsung/board-a145f.o
-  CC      drivers/framework.o
   CC      main/boot.o
-  CC      arch/aarch64/load-kernel.o
   CC      main/main.o
-  CC      lib/compiler-rt.o
-  CC      drivers/ramdisk-handler.o
-  CC      lib/console/console.o
   CC      main/boot-fdt.o
+  CC      arch/aarch64/load-kernel.o
+  CC      drivers/framework.o
+  CC      board/samsung/board-a145f.o
+  CC      drivers/ramdisk-handler.o
+  CC      lib/compiler-rt.o
+  CC      lib/console/console.o
   CC      lib/libfdt/fdt.o
   CC      lib/libfdt/fdt_ro.o
   CC      lib/libfdt/fdt_rw.o
