@@ -11,8 +11,17 @@
 // left them in EINT mode, where the DAT register is not reliable).
 #define KEYPAD_FORCE_INPUT  1
 
-// On-screen KEYPAD: log lines (they overlap the GUI, so off by default).
-#define KEYPAD_DEBUG        0
+// On-screen KEYPAD: log lines (they overlap the GUI).  On while hunting for
+// the real volume-key pins; set back to 0 once the keys work.
+#define KEYPAD_DEBUG        1
+
+// Pin finder (read-only, nothing is written): prints CON/DAT/PUD of the ALIVE
+// GPIO banks gpa0..gpa4 at boot, then a "SCAN gpaN DAT old->new" line whenever
+// a pin level changes.  Press Volume Up, release, press Volume Down, release,
+// and read which bank/bit toggles.  Set to 0 once the pins are confirmed.
+#define KEYPAD_SCAN         1
+#define KEYPAD_SCAN_BANKS   5
+#define KEYPAD_SCAN_MAXLOG  80
 
 // Holding Volume Down this long sends Enter (select).  Volume Down no longer
 // auto-repeats; Volume Up still does.
@@ -277,6 +286,15 @@ KeypadDeviceImplConstructor(VOID)
 #endif
   }
 
+#if KEYPAD_SCAN
+  for (Index = 0; Index < KEYPAD_SCAN_BANKS; Index++) {
+    UINT32 Reg = 0x11850000 + (UINT32)Index * 0x20;
+    DEBUG((DEBUG_ERROR, "SCAN gpa%d CON=%08x DAT=%02x PUD=%04x\n", (int)Index,
+      MmioRead32(Reg + 0x0), MmioRead32(Reg + 0x4) & 0xFF,
+      MmioRead32(Reg + 0x8) & 0xFFFF));
+  }
+#endif
+
   // power: NOT configured yet.  On the A145F the power key is probably behind
   // the PMIC; take the pin from the stock DTB (gpio-keys node) and fill in:
   //   StaticContext             = KeypadKeyCodeToKeyContext(116);
@@ -319,6 +337,27 @@ EFI_STATUS KeypadDeviceImplGetKeys(
     if (!PollAnnounced) {
         PollAnnounced = TRUE;
         DEBUG((DEBUG_ERROR, "KEYPAD: poll running\n"));
+    }
+#endif
+
+#if KEYPAD_SCAN
+    {
+        STATIC UINT32  ScanLast[KEYPAD_SCAN_BANKS];
+        STATIC BOOLEAN ScanPrimed = FALSE;
+        STATIC UINTN   ScanLogged = 0;
+        UINTN          Bank;
+
+        for (Bank = 0; Bank < KEYPAD_SCAN_BANKS; Bank++) {
+            UINT32 Dat = MmioRead32(0x11850000 + (UINT32)Bank * 0x20 + 0x4) & 0xFF;
+            if (ScanPrimed && Dat != ScanLast[Bank] &&
+                ScanLogged < KEYPAD_SCAN_MAXLOG) {
+                ScanLogged++;
+                DEBUG((DEBUG_ERROR, "SCAN gpa%d DAT %02x->%02x\n", (int)Bank,
+                  ScanLast[Bank], Dat));
+            }
+            ScanLast[Bank] = Dat;
+        }
+        ScanPrimed = TRUE;
     }
 #endif
 
