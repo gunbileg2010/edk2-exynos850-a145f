@@ -17,12 +17,14 @@
 
 #include <Uefi.h>
 #include <Library/IoLib.h>
+#include <Library/SafeMmioLib.h>
 #include <Library/UefiLib.h>
 #include <Library/ArmSmcLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/MemoryAllocationLib.h>
 #include <Library/BaseMemoryLib.h>
 #include <Library/PrintLib.h>
+#include <Library/BaseLib.h>
 #include <Protocol/BlockIo.h>
 #include <Protocol/SimpleFileSystem.h>
 
@@ -352,6 +354,29 @@ PressAnyKey (
   }
 }
 
+//
+// Some words (e.g. CHIPID+0x14) raise a synchronous external abort when read
+// from the non-secure world, which used to take the whole firmware down.
+// SafeMmioRead32() reports that as an error; unreadable words show "--------".
+// A read that hangs the bus (no abort) cannot be caught, so the address is
+// printed BEFORE the words are read: the last line on screen is where it hung.
+//
+STATIC
+VOID
+ReadWordStr (
+  IN  UINTN  Addr,
+  OUT CHAR8  Out[9]
+  )
+{
+  UINT32  V;
+
+  if (EFI_ERROR (SafeMmioRead32 (Addr, &V))) {
+    AsciiStrCpyS (Out, 9, "--------");
+  } else {
+    AsciiSPrint (Out, 9, "%08x", V);
+  }
+}
+
 STATIC
 VOID
 AppendMmioRegion (
@@ -361,22 +386,19 @@ AppendMmioRegion (
   )
 {
   UINTN   Index;
-  UINT32  V0;
-  UINT32  V1;
-  UINT32  V2;
-  UINT32  V3;
+  CHAR8   W[4][9];
   UINTN   Addr;
 
   AppendDump ("==== %a @ 0x%010lx ====\r\n", Title, (UINT64)Base);
   for (Index = 0; Index < Count; Index += 4) {
     Addr = Base + Index * sizeof (UINT32);
-    V0 = MmioRead32 (Addr + 0);
-    V1 = MmioRead32 (Addr + 4);
-    V2 = MmioRead32 (Addr + 8);
-    V3 = MmioRead32 (Addr + 12);
+    ReadWordStr (Addr + 0, W[0]);
+    ReadWordStr (Addr + 4, W[1]);
+    ReadWordStr (Addr + 8, W[2]);
+    ReadWordStr (Addr + 12, W[3]);
     AppendDump (
-      "0x%010lx: %08x %08x %08x %08x\r\n",
-      (UINT64)Addr, V0, V1, V2, V3
+      "0x%010lx: %a %a %a %a\r\n",
+      (UINT64)Addr, W[0], W[1], W[2], W[3]
       );
   }
   AppendDump ("\r\n");
@@ -392,10 +414,7 @@ DumpMmioRegion (
   )
 {
   UINTN   Index;
-  UINT32  V0;
-  UINT32  V1;
-  UINT32  V2;
-  UINT32  V3;
+  CHAR8   W[4][9];
   UINTN   Addr;
 
   gST->ConOut->ClearScreen (gST->ConOut);
@@ -404,17 +423,15 @@ DumpMmioRegion (
 
   for (Index = 0; Index < Count; Index += 4) {
     Addr = Base + Index * sizeof (UINT32);
-    V0 = MmioRead32 (Addr + 0);
-    V1 = MmioRead32 (Addr + 4);
-    V2 = MmioRead32 (Addr + 8);
-    V3 = MmioRead32 (Addr + 12);
-    Print (
-      L"  0x%010lx: %08x %08x %08x %08x\n",
-      (UINT64)Addr, V0, V1, V2, V3
-      );
+    Print (L"  0x%010lx:", (UINT64)Addr);   // before the reads: marks where a hang happens
+    ReadWordStr (Addr + 0, W[0]);
+    ReadWordStr (Addr + 4, W[1]);
+    ReadWordStr (Addr + 8, W[2]);
+    ReadWordStr (Addr + 12, W[3]);
+    Print (L" %a %a %a %a\n", W[0], W[1], W[2], W[3]);
     AppendDump (
-      "0x%010lx: %08x %08x %08x %08x\r\n",
-      (UINT64)Addr, V0, V1, V2, V3
+      "0x%010lx: %a %a %a %a\r\n",
+      (UINT64)Addr, W[0], W[1], W[2], W[3]
       );
   }
   AppendDump ("\r\n");
