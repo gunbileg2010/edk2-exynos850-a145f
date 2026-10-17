@@ -11,10 +11,15 @@
   DEVICE_DXE_FV_COMPONENTS       = Platform/Samsung/exynos850/a145f.fdf.inc
   BROKEN_CNTFRQ_EL0              = 1
 
+  # Private, read-only register/eFuse dump menu (see
+  # Platform/RenegadePkg/Application/RegExplorerApp). Only built for this
+  # device's own private image - drop these two lines before sharing a build.
+  REG_EXPLORER_APP_SUPPORT       = TRUE
+
 !include Platform/Samsung/exynos850/exynos850.dsc
 
 [BuildOptions.common]
-  GCC:*_*_AARCH64_CC_FLAGS = -std=gnu11 -DENABLE_SIMPLE_INIT -DBROKEN_CNTFRQ_EL0=$(BROKEN_CNTFRQ_EL0)
+  GCC:*_*_AARCH64_CC_FLAGS = -std=gnu11 -DENABLE_SIMPLE_INIT -DREG_EXPLORER_APP_SUPPORT -DBROKEN_CNTFRQ_EL0=$(BROKEN_CNTFRQ_EL0)
 
 [LibraryClasses.common]
   # A145F-specific map: UEFI lives at 0xa1000000 and must stay out of the

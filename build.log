@@ -1,3 +1,4 @@
+SimpleInit free(): already fixed
 EDK2 Path: /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2
 EDK2_PLATFORMS Path: /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2-platforms
 Loading previous configuration from /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf/BuildEnv.sh
@@ -650,7 +651,7 @@ testValidUtf8File (CheckUnicodeSourceFiles.Tests.testValidUtf8File) ... ok
 testValidUtf8FileWithBom (CheckUnicodeSourceFiles.Tests.testValidUtf8FileWithBom) ... ok
 
 ----------------------------------------------------------------------
-Ran 302 tests in 0.655s
+Ran 302 tests in 0.668s
 
 OK
 make[1]: Leaving directory '/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/Tests'
@@ -729,9 +730,9 @@ aarch64-linux-gnu-objcopy -O binary BootShim.Dualboot.elf BootShim.Dualboot.bin
 + return 0
 + mkdir -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf
 + cp /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/build_rule.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/tools/tools_def.txt /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/Conf/
-+ build -s -n 0 -a AARCH64 -t CLANG38 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=c73bcc6 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
++ build -s -n 0 -a AARCH64 -t CLANG38 -p /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/a145f.dsc -b RELEASE -D FIRMWARE_VER=077c285 -D USE_UART=0 -D FIX_CLANG=0 -D NO_EXCEPTION_DISPLAY=0 -D FD_BASE=0xa1000000 -D FD_SIZE=0x00700000 -D ENABLE_LINUX_UTILS=
 Build environment: Linux-7.0.0-38-generic-x86_64-with-glibc2.43
-Build start time: 16:00:48, Oct.12 2026
+Build start time: 15:35:36, Oct.17 2026
 
 WORKSPACE        = /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace
 PACKAGES_PATH    = /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2:/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2-platforms:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit:/home/gunbileg/Downloads/edk2-exynos850-a145f:/home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers
@@ -745,11 +746,11 @@ Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 
-Processing meta-data .
-Parser...
+
+Processing meta-data Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
-
+.
 Architecture(s)  = AARCH64
 Build target     = RELEASE
 Toolchain        = CLANG38
@@ -762,7 +763,7 @@ Parser...
 /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/ExynosCommonDsc.inc(26): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1 
 Parser...
-/home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/exynos850.fdf(338): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/Samsung/exynos850/exynos850.fdf(342): warning: Suspicious expression: == Comparison between Operand of string type and Boolean/Number Type always return False.
     !if $(ENABLE_LINUX_UTILS) == 1
 
 #Parser...
@@ -873,6 +874,7 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exyno
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPlatformPkg/Library/PrePiHobListPointerLib/PrePiHobListPointerLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/PrePiLib/PrePiLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePerformanceLibNull/BasePerformanceLibNull.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/SafeMmioLib/SafeMmioLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/lodepng/LodePNG.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/regex/RegexLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/boot/SimpleInitBoot.inf [AARCH64]
@@ -964,8 +966,7 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/Si
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/DxeSecurityManagementLib/DxeSecurityManagementLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Library/TimeBaseLib/TimeBaseLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/ArmArchTimerLib/ArmArchTimerLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf [AARCH64]
@@ -974,8 +975,9 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxeServicesLib/DxeServicesLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/SimpleInitRootFS.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiRuntimeLib/UefiRuntimeLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcPsciResetSystemLib/ArmSmcPsciResetSystemLib.inf [AARCH64]
-Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Library/ResetSystemLib/ResetSystemLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Library/ArmArchTimerLib/ArmArchTimerLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Library/ArmGenericTimerVirtCounterLib/ArmGenericTimerVirtCounterLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/libs/libtsm/TSMLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseStackCheckLib/BaseStackCheckLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf [AARCH64]
@@ -998,12 +1000,14 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Li
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/DxePcdLib/DxePcdLib.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdePkg/Library/BaseLib/BaseLib.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Drivers/MmcDiagDxe/MmcDiagDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/LogoDxe/LogoDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/SimpleTextInOutSerial/SimpleTextInOutSerial.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/Drivers/GenericKeypadDeviceDxe/GenericKeypadDeviceDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/ExynosPkg/PrePi/PrePi.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/FatPkg/EnhancedFatDxe/Fat.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/main/SimpleInitMain.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf [AARCH64]
@@ -1025,7 +1029,11 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ShellPkg/Application/Shell/Shell.inf [AARCH64]
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump/DEBUG/RegDump.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump/DEBUG/RegDump.dll
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf [AARCH64]
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump/DEBUG/RegDump.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Application/RegDump/RegDump/DEBUG/RegDump.dll
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PrintDxe/PrintDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Usb/UsbMouseAbsolutePointerDxe/UsbMouseAbsolutePointerDxe.inf [AARCH64]
@@ -1041,6 +1049,10 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/ArmPkg/Drivers/ArmGic/ArmGicDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Application/UiApp/UiApp.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf [AARCH64]
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/ExynosPkg/PrePi/PrePi/DEBUG/Sec.dll
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf [AARCH64]
@@ -1051,17 +1063,52 @@ Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModule
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/GPLDrivers/Library/SimpleInit/src/kernelfdt/KernelFdtDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SecurityStubDxe/SecurityStubDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Drivers/Exynos850MmcBlockIoDxe/Exynos850MmcBlockIoDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Application/RegExplorerApp/RegExplorerApp.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Application/Reboot2PayloadApp/Reboot2PayloadApp.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/PCD/Dxe/Pcd.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/DtPlatformDxe/DtPlatformDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Bus/Pci/XhciDxe/XhciDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf [AARCH64]
+Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Platform/RenegadePkg/Drivers/Ext4Dxe/Ext4Dxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf [AARCH64]
 Building ... /home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf [AARCH64]
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Platform/RenegadePkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe/DEBUG/PlatformSmbiosDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe/DEBUG/ExynosResetNotifyDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe/DEBUG/ExynosResetNotifyDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe/DEBUG/ExynosResetNotifyDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe/DEBUG/ExynosResetNotifyDxe.dll
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe/DEBUG/ResetSystemRuntimeDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe/DEBUG/ResetSystemRuntimeDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe/DEBUG/ResetSystemRuntimeDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Universal/BdsDxe/BdsDxe/DEBUG/BdsDxe.dll
+/usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll has a LOAD segment with RWX permissions
+objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
+--strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/MdeModulePkg/Application/UiApp/UiApp/DEBUG/UiApp.dll
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:31: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gLineControlDirective = re.compile('^\s*#(?:line)?\s+([0-9]+)\s+"*([^"]*)"')
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:33: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gTypedefPattern = re.compile("^\s*typedef\s+struct(\s+\w+)?\s*[{]*$", re.MULTILINE)
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:35: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gPragmaPattern = re.compile("^\s*#pragma\s+pack", re.MULTILINE)
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:37: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gTypedef_SinglePattern = re.compile("^\s*typedef", re.MULTILINE)
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:39: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gTypedef_MulPattern = re.compile("^\s*(typedef)?\s+(struct|union)(\s+\w+)?\s*[{]*$", re.MULTILINE)
+/home/gunbileg/Downloads/edk2-exynos850-a145f/Common/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/Trim/Trim.py:54: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+  gAslIncludePattern = re.compile("^(\s*)[iI]nclude\s*\(\"?([^\"\(\)]+)\"\)", re.MULTILINE)
 /usr/bin/aarch64-linux-gnu-ld.bfd: warning: /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll has a LOAD segment with RWX permissions
 objcopy not needed for /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
 --strip-unneeded -R .eh_frame /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/AARCH64/src/main/SimpleInitMain/DEBUG/SimpleInitMain.dll
@@ -1076,15 +1123,15 @@ Generate Region at Offset 0x0
 Generating FVMAIN_COMPACT FV
 
 Generating FVMAIN FV
-#########
+############
 GUID cross reference file can be found at /home/gunbileg/Downloads/edk2-exynos850-a145f/workspace/Build/a145f/RELEASE_CLANG38/FV/Guid.xref
 
 FV Space Information
-FVMAIN [99%Full] 28674496 (0x1b589c0) total, 28674448 (0x1b58990) used, 48 (0x30) free
-FVMAIN_COMPACT [78%Full] 7340032 (0x700000) total, 5787952 (0x585130) used, 1552080 (0x17aed0) free
+FVMAIN [99%Full] 28764928 (0x1b6eb00) total, 28764912 (0x1b6eaf0) used, 16 (0x10) free
+FVMAIN_COMPACT [79%Full] 7340032 (0x700000) total, 5798968 (0x587c38) used, 1541064 (0x1783c8) free
 
 - Done -
-Build end time: 16:01:14, Oct.12 2026
+Build end time: 15:36:03, Oct.17 2026
 Build total time: 00:00:26
 
 + _call_hook platform_build_kernel
@@ -1117,14 +1164,14 @@ Build total time: 00:00:26
 ++ make -C /home/gunbileg/Downloads/edk2-exynos850-a145f/../uniLoader-a145f-bootloader -j16 CROSS_COMPILE=aarch64-linux-gnu-
 scripts/kconfig/conf --silentoldconfig Kconfig
   LDS     arch/aarch64/linker.lds
-  CC      main/boot.o
-  CC      main/main.o
-  CC      main/boot-fdt.o
   CC      arch/aarch64/load-kernel.o
-  CC      drivers/framework.o
+  CC      main/boot.o
   CC      board/samsung/board-a145f.o
+  CC      drivers/framework.o
+  CC      main/main.o
   CC      drivers/ramdisk-handler.o
   CC      lib/compiler-rt.o
+  CC      main/boot-fdt.o
   CC      lib/console/console.o
   CC      lib/libfdt/fdt.o
   CC      lib/libfdt/fdt_ro.o
@@ -1134,8 +1181,8 @@ scripts/kconfig/conf --silentoldconfig Kconfig
   CC      lib/libfdt/fdt_wip.o
   CC      lib/simplefb/simplefb.o
   CC      lib/unic/string.o
-  LD      main/built-in.o
   LD      arch/built-in.o
+  LD      main/built-in.o
   AR      drivers/lib.a
   AR      board/lib.a
   AR      lib/lib.a

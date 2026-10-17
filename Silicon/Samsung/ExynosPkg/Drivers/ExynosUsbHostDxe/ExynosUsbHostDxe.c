@@ -289,6 +289,8 @@ STATIC BOOLEAN VbusOn (VOID)
   Mode = (UINT8)(((Mode & 0xF) | BIT2 | BIT1) & ~BIT0);
   ChgUpdate (0x3A, 0x01, 0x03);                        /* auto async */
   ChgUpdate (S2MU106_CHG_CTRL0, Mode, 0xF);
+  /* regmode_vote() final branch (OTG, no BUCK): "prevent OTG OCP default". */
+  ChgWrite (0x39, 0x55);
   MicroSecondDelay (20000);
 
   ChgUpdate (0x94, 0x0C, 0x0C);                        /* OTG fault debounce 15 ms */
@@ -400,6 +402,10 @@ STATIC BOOLEAN Dwc3HostMode (VOID)
   Wr (USBCTRL_BASE, DWC3_GCTL, V);
   MicroSecondDelay (1000);
   Say ("DWC3 GCTL = 0x%08x (PRTCAPDIR bits 13:12 should be 1 = host)", Rd (USBCTRL_BASE, DWC3_GCTL));
+  /* For comparing with Linux dwc3_core_init(): PHY width / turnaround come from here. */
+  Say ("DWC3 GHWPARAMS3 = 0x%08x GUSB2PHYCFG = 0x%08x GUSB3PIPECTL = 0x%08x",
+       Rd (USBCTRL_BASE, 0xC14C), Rd (USBCTRL_BASE, DWC3_GUSB2PHYCFG),
+       Rd (USBCTRL_BASE, DWC3_GUSB3PIPECTL));
   return TRUE;
 }
 
