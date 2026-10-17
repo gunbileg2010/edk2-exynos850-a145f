@@ -21,6 +21,7 @@
 [LibraryClasses]
   BaseLib
   BaseMemoryLib
+  DebugLib
   IoLib
   UefiApplicationEntryPoint
   UefiBootServicesTableLib
@@ -28,3 +29,4 @@
 
 [Protocols]
   gEfiShellParametersProtocolGuid     ## SOMETIMES_CONSUMES
+  gEfiCpuArchProtocolGuid             ## CONSUMES
