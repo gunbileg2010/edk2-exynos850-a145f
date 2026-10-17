@@ -28,15 +28,12 @@
   and this project's own Exynos7420Pkg ResetSystemLib already use for the
   equivalent register on an older SoC in the same family.
 
-  SWRESET (full-chip software reset, offset 0x400 within PMU_ALIVE) is
-  copied from this repo's working Exynos7420Pkg ResetSystemLib. That exact
-  offset has stayed put across the whole Exynos4/5/7-series PMU_ALIVE map
-  (TRMs for 4412 through 7420 all put SYSTEM_CONFIGURATION/SWRESET at
-  PMU_ALIVE+0x400). It has NOT been independently confirmed against this
-  exact S5E3830/A145F on real hardware yet (unlike PS_HOLD, which came
-  straight out of this device's own DTB) - if cold reset still doesn't
-  take, this offset is the first thing to re-check against Samsung's own
-  regs-pmu-exynos850.h if/when that turns up.
+  SWRESET is SYSTEM_CONFIGURATION (PMU_ALIVE + 0x3A00), bit 1
+  (SWRESET_SYSTEM). This is not carried over from the Exynos7420 (0x400): it
+  is taken from the stock kernel's exynos-reboot.c (drv_data_v1:
+  swreset_reg = SYSTEM_CONFIGURATION, swreset_bit = 1) and matches the
+  syscon-reboot node of the upstream Linux exynos850.dtsi
+  (offset 0x3a00, mask/value 0x2).
 
   Both writes are bounded (a few hundred iterations of a 1us-ish spin, not
   Exynos7420Pkg's unbounded "while (...)"), so a wrong guess here hangs for
@@ -73,8 +70,8 @@
 // register name/position across the whole Exynos4/5/7 PMU_ALIVE family.
 // Not yet independently confirmed on this exact SoC.
 //
-#define SWRESET_OFFSET          0x0400UL
-#define SWRESET_TRIGGER         0x1UL
+#define SWRESET_OFFSET          0x3A00UL
+#define SWRESET_TRIGGER         0x2UL   // SWRESET_SYSTEM = bit 1
 
 #define POLL_ITERATIONS         2000
 #define POLL_DELAY_US           100
@@ -168,10 +165,9 @@ ResetShutdown (
 }
 
 /**
-  Platform-specific reset. Not wired to anything yet (no vendor reboot-reason
-  encoding has been reverse-engineered/confirmed for this device) - falls
-  back to a cold reset so "reboot recovery"/"reboot bootloader" at least
-  reboot the phone rather than silently doing nothing.
+  Platform-specific reset: a cold reset. The reboot reason (recovery /
+  bootloader / ...) is stored in PMU SYSIP_DAT0 by ExynosResetNotifyDxe,
+  which receives ResetData through EFI_RESET_NOTIFICATION_PROTOCOL.
 **/
 VOID
 EFIAPI
@@ -182,7 +178,7 @@ ResetPlatformSpecific (
 {
   DEBUG ((
     DEBUG_WARN,
-    "ResetSystemLib(a145f): ResetPlatformSpecific has no reboot-reason encoding yet - falling back to cold reset\n"
+    "ResetSystemLib(a145f): platform-specific reset -> cold reset\n"
     ));
   ResetCold ();
 }

@@ -17,16 +17,16 @@
 
 [Packages]
   MdePkg/MdePkg.dec
+  Silicon/Samsung/Exynos850Pkg/exynos850.dec
 
 [LibraryClasses]
   BaseLib
   BaseMemoryLib
-  DebugLib
   IoLib
+  SafeMmioLib
   UefiApplicationEntryPoint
   UefiBootServicesTableLib
   UefiLib
 
 [Protocols]
   gEfiShellParametersProtocolGuid     ## SOMETIMES_CONSUMES
-  gEfiCpuArchProtocolGuid             ## CONSUMES

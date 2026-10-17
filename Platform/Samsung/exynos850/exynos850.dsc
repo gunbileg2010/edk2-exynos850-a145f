@@ -74,6 +74,9 @@
   # for how that was confirmed.
   HwResetSystemLib|Silicon/Samsung/Exynos850Pkg/Library/ResetSystemLib/ResetSystemLib.inf
   ResetSystemLib|Silicon/Samsung/Exynos850Pkg/Library/ResetSystemLib/ResetSystemLib.inf
+
+  # fault-tolerant register probing (RegDump and other debug apps)
+  SafeMmioLib|Silicon/Samsung/Exynos850Pkg/Library/SafeMmioLib/SafeMmioLib.inf
   KeypadDeviceImplLib|Silicon/Samsung/Exynos850Pkg/Library/KeypadDeviceImplLib/KeypadDeviceImplLib.inf
   PlatformMemoryMapLib|Silicon/Samsung/Exynos850Pkg/Library/PlatformMemoryMapLib/PlatformMemoryMapLib.inf
   PlatformPeiLib|Silicon/Samsung/Exynos850Pkg/Library/PlatformPeiLib/PlatformPeiLib.inf
@@ -82,5 +85,7 @@
   SOCSmbiosInfoLib|Silicon/Samsung/Exynos850Pkg/Library/SOCSmbiosInfoLib/SOCSmbiosInfoLib.inf
 
 [Components.common]
+  # stores recovery/bootloader reboot requests in PMU SYSIP_DAT0 for S-Boot
+  Silicon/Samsung/Exynos850Pkg/Drivers/ExynosResetNotifyDxe/ExynosResetNotifyDxe.inf
   Silicon/Samsung/Exynos850Pkg/Drivers/Exynos850MmcBlockIoDxe/Exynos850MmcBlockIoDxe.inf
   Platform/RenegadePkg/Drivers/Ext4Dxe/Ext4Dxe.inf
